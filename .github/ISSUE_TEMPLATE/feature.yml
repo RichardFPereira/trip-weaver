@@ -1,0 +1,39 @@
+name: Feature / task
+description: A small unit of work with acceptance criteria and an authorship mode
+labels: ["feature"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What problem does this solve? Link the business rules (e.g. S4) and ADRs.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria (Given / When / Then)
+      value: |
+        - [ ] **Given** ... **When** ... **Then** ...
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Authorship mode
+      options:
+        - human — I write; AI mentors and reviews
+        - pair — both write; I drive the design
+        - ai — AI writes (frontend or replicating an existing structure); I review
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options:
+        - S (≤ 2h)
+        - M (≤ 4h)
+        - L (≤ 6h) — consider splitting
+    validations:
+      required: true
